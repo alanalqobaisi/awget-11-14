@@ -10,6 +10,16 @@ if os.path.isfile(file_path):
 else:
     raise ValueError("%s isn't a file!" % file_path)
     
-    #Create a looping statement to receive the file in chunks
+    #receive the file
+   while true : 
+    c, addr = soc.accept()
+    data = c.recv(1024)
+    print('data recieved from {} :'.format(addr))
+    print('')
+    print(data)
+    print('')
+    print('exiting program')
+    c.close()
+    soc.close()
     
     
